@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML API</title>
+    <!-- <link rel="stylesheet" href="form.css"> -->
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html{
+        font-size: 10px;
+    }
+    body{
+        overflow-x: hidden;
+        font-family: calibri;
+    }
+    .container{
+        width: 100vw;
+        height: 140vh;
+        background: #161616;
+        display: flex;
+        justify-content: center;
+    }
+    .center-container{
+        width: 40%;
+        height: 100vh;
+        box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.5);
+        background: #252525;
+        border: 1px solid #353434;
+        margin-top: 6rem;
+    }
+    .heading{
+        color: #fff;
+        font-size: 3rem;
+        letter-spacing: 0.5px;
+        font-weight: 500;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 1.5rem;
+        position: absolute;
+        display: inline-block;
+        border-bottom: 2px solid #1ed98b;
+    }
+    .form{
+        width: 100%;
+        height: 80%;
+        margin-top: 15%;
+        position: relative;
+    }
+    .wrap{
+        width: 90%;
+        margin: 2rem 5%;
+    }
+    .wrap .label{
+        display: block;
+        color: #dad6d6;
+        font-size: 1.8rem;
+        font-weight: 500;
+        margin: 1rem 0;
+    }
+    .wrap .input100{
+        width: 100%;
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+        color: #fff;
+        font-weight: 400;
+        background: transparent;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-bottom: 1px solid #929292;
+        outline: none;
+    }
+    .wrap .input100::placeholder{
+        opacity: 0.5;
+        letter-spacing: 0.7px;
+        font-size: 1.6rem;
+    
+    }
+    .wrap .input100:focus{
+        border-bottom: 1px solid #17d1ac;
+        transition: all 0.5s ease;
+    }
+    .submit-btn{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 1rem;
+        padding: 1.5rem 6rem;
+        background: #1ed98b;
+        border-radius: 3rem;
+        color: #000;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        font-weight: 700;
+        outline: none;
+        border: none;
+        box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.5);
+    }
+    .prediction{
+        width: 40vw;
+        height: 10rem;
+        position: absolute;
+        bottom: -20rem;
+        box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.5);
+        background: #252525;
+        border: 1px solid #353434;
+    }
+    .prediction h3{
+        color: #e6e6e6;
+        font-size: 1.75rem;
+        margin-top: 2.7rem;
+        margin-left: 1rem;
+    }
+    /* @media screen and (max-width: 322px){
+        html{
+            font-size: 6px;
+        }
+        .heading{
+            font-size: 1rem;
+        }
+    }
+    @media screen and (min-width: 323px) and (max-width: 420px){
+        html{
+            font-size: 7.5px;
+        }
+        .heading{
+            font-size: 2rem;
+        }
+        .center-container{
+            width: 90vw;
+            height: 56%;
+        }
+    } */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="center-container">
+            <h1 class="heading">Incident Impact Prediction</h1>
+            <form class="form" action="{{ url_for('predict')}}" method="post">
+                    
+                <div class="wrap" >
+                    <span class="label">category : </span>
+                    <input class="input100" type="text" id="category" name="category" placeholder="category (integer) ex: 55" required="required">
+                </div>
+
+                <div class="wrap" >
+                    <span class="label">Sub-category : </span>
+                    <input class="input100" type="text" id="subcategory" name="subcategory" placeholder="subcategory (integer) ex: 215" required="required">
+                </div>
+                            
+                <div class="wrap" >
+                    <span class="label">Caller ID : </span>
+                    <input class="input100" type="text" id="caller_id" name="caller_id" placeholder="caller_id ex: 2407" required="required">
+                </div>
+
+                <div class="wrap" >
+                    <span class="label">User Symptom : </span>
+                    <input class="input100" type="text" id="u_symptom" name="u_symptom" placeholder="User Symptom ex: 530" required="required">
+                </div>
+                                            
+                <div class="wrap" >
+                    <span class="label">Opened By : </span>
+                    <input class="input100" type="text" id="opened_by" name="opened_by" placeholder="Opened By ex: 120" required="required">
+                </div>
+                                            
+                <div class="wrap" >
+                    <span class="label">Location : </span>
+                    <input class="input100" type="text" id="location" name="location" placeholder="Location ex: 170" required="required">
+                </div>
+
+                <button class="submit-btn">predict</button>
+            </form>
+            
+        </div>
+        <div class="prediction">
+            <h3>{{ prediction_text }}</h3>
+        </div>
+    </div>
+</body>
+</html>
