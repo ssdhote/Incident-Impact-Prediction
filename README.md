@@ -11,8 +11,11 @@ Objective - The Objective of analysis is to predict the impact (i.e. High, Mediu
 INCIDENT MANAGEMENT PROCESS
 
 1)	“Incident” can be defined as :-
-a)	Unplanned interruption 
+
+a)	Unplanned interruption
+
 b)	Reduction in quality
+
 c)	Anything that has potential to become issue though not impacting yet. 
 
 2)	“ Incident Management “ is the process of handling all the incidents throughout their lifecycle.
@@ -20,8 +23,11 @@ c)	Anything that has potential to become issue though not impacting yet.
 3)	Purpose of Incident Management :-
 
 a)	Restore normal service operation as soon as possible.
+
 b)	Minimize adverse impacts on business operations.
+
 c)	Ensure the best possible levels of service quality and avalibility.
+
 d)	“Normal Service Operation” is defines here as Service Operation within SLA limits.
 
 4)	Objective of Incident Management process :-
@@ -34,14 +40,19 @@ d)	Align incident management activities and priorities with those of the busines
 5)	Scope of Incident Management :-
 
 a)	Managing any disruption or potential disruption to live IT services incidents identified.
+
 b)	Directly by users through the service desk.
+
 c)	Through an interface from event management to incident management tools.
+
 d)	Reported and/or logged by technical staff.
 
 6)	Incident Management adds value to business in following ways :-
 
 a)	It lowers downtime for the business, which in turn leads to higher availability of the services.
+
 b)	It allows the business to better identify priorities and dynamically allocate resources as required.
+
 c)	It increases the ability to identify potential improvements to services.
 
 
